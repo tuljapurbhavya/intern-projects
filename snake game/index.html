@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Arcade Grid</p>
+        <h1>Snake Game</h1>
+      </div>
+      <div class="top-bar">
+        <div class="score-box">Score: <span id="score">0</span></div>
+        <button id="restartBtn" type="button">Restart</button>
+      </div>
+    </header>
+
+    <section class="game-area" aria-label="Snake game board">
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
+      <div class="game-over hidden" id="gameOver">
+        <h2>Game Over</h2>
+        <p>Press Restart to play again</p>
+      </div>
+    </section>
+
+    <section class="mobile-controls" aria-label="Mobile controls">
+      <button type="button" data-direction="up" aria-label="Move up">Up</button>
+      <div>
+        <button type="button" data-direction="left" aria-label="Move left">Left</button>
+        <button type="button" data-direction="down" aria-label="Move down">Down</button>
+        <button type="button" data-direction="right" aria-label="Move right">Right</button>
+      </div>
+    </section>
+
+    <section class="instructions">
+      <p>Use the arrow keys to move the snake. Eat the food to grow longer.</p>
+      <p>Avoid walls and your own tail.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

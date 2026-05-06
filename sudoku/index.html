@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Sudoku</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="title-block">
+        <p class="eyebrow">Neon Logic Arena</p>
+        <h1>3D Sudoku</h1>
+        <p class="subtitle">Solve a glowing 9x9 puzzle on a responsive glass board with live validation and tactile 3D motion.</p>
+      </div>
+
+      <div class="game-layout">
+        <aside class="control-panel glass">
+          <div class="panel-section">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" aria-label="Select difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+
+          <div class="stats-grid" aria-label="Game statistics">
+            <div class="stat-card">
+              <span>Mistakes</span>
+              <strong id="mistakeCount">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Filled</span>
+              <strong><span id="filledCount">0</span>/81</strong>
+            </div>
+          </div>
+
+          <div class="button-stack">
+            <button id="newPuzzle" class="neon-button" type="button">Generate New</button>
+            <button id="checkSolution" class="neon-button secondary" type="button">Check Solution</button>
+            <button id="hintButton" class="neon-button secondary" type="button">Hint</button>
+            <button id="resetPuzzle" class="neon-button danger" type="button">Reset Puzzle</button>
+          </div>
+
+          <div id="message" class="message" role="status" aria-live="polite">Choose a cell and enter a number.</div>
+        </aside>
+
+        <section class="board-zone">
+          <div class="board-orbit" id="boardOrbit">
+            <div class="sudoku-board" id="sudokuBoard" aria-label="Sudoku board"></div>
+          </div>
+
+          <div class="keypad glass" id="keypad" aria-label="Number keypad"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

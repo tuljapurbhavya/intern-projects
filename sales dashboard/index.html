@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div>
+        <h2>Sales Dashboard</h2>
+        <nav aria-label="Dashboard sections">
+          <button class="nav-item active" type="button">Overview</button>
+          <button class="nav-item" type="button">Sales Trends</button>
+          <button class="nav-item" type="button">Top Products</button>
+          <button class="nav-item" type="button">Categories</button>
+        </nav>
+      </div>
+
+      <button class="dark-mode" id="darkModeToggle" type="button" aria-pressed="false">
+        <span aria-hidden="true">Moon</span>
+        Dark Mode
+      </button>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Quarterly Performance</p>
+          <h1>Sales Overview</h1>
+        </div>
+        <p class="period-label">Jan-Dec 2026</p>
+      </header>
+
+      <section class="cards" aria-label="Sales metrics">
+        <article class="card">
+          <span>Total Sales</span>
+          <strong>$125,000</strong>
+          <small>+14.2% vs last year</small>
+        </article>
+        <article class="card">
+          <span>Revenue</span>
+          <strong>$187,500</strong>
+          <small>+9.8% vs last year</small>
+        </article>
+        <article class="card">
+          <span>Orders</span>
+          <strong>2,450</strong>
+          <small>+312 new orders</small>
+        </article>
+        <article class="card">
+          <span>Profit</span>
+          <strong>$62,500</strong>
+          <small>33.3% margin</small>
+        </article>
+      </section>
+
+      <section class="analytics-grid">
+        <article class="chart-section wide">
+          <div class="section-heading">
+            <h2>Sales Trends</h2>
+            <span>Last 12 Months</span>
+          </div>
+          <div class="chart-frame">
+            <canvas id="salesChart"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-section">
+          <div class="section-heading">
+            <h2>Category Distribution</h2>
+            <span>By revenue</span>
+          </div>
+          <div class="chart-frame pie-frame">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Population Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Census Intelligence</p>
+        <h1>Population Census Dashboard</h1>
+      </div>
+      <div class="filter-section">
+        <label for="stateSelect">Select State</label>
+        <select id="stateSelect">
+          <option value="all">All States</option>
+          <option value="california">California</option>
+          <option value="texas">Texas</option>
+          <option value="florida">Florida</option>
+          <option value="new-york">New York</option>
+          <option value="pennsylvania">Pennsylvania</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="Population summary">
+      <article class="stat-box">
+        <span>Total Population</span>
+        <h2 id="totalPopulation">123,425,864</h2>
+      </article>
+      <article class="stat-box">
+        <span>Male Population</span>
+        <h2 id="malePopulation">60,800,000</h2>
+      </article>
+      <article class="stat-box">
+        <span>Female Population</span>
+        <h2 id="femalePopulation">62,625,864</h2>
+      </article>
+    </section>
+
+    <section class="charts">
+      <article class="chart-box">
+        <div class="section-heading">
+          <h2>State Population</h2>
+          <span id="barChartLabel">All tracked states</span>
+        </div>
+        <div class="chart-frame">
+          <canvas id="barChart"></canvas>
+        </div>
+      </article>
+
+      <article class="chart-box">
+        <div class="section-heading">
+          <h2>Gender Distribution</h2>
+          <span id="pieChartLabel">All States</span>
+        </div>
+        <div class="chart-frame">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

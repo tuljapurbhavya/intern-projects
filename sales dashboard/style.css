@@ -1,0 +1,261 @@
+:root {
+  --bg: #eef2f6;
+  --surface: #ffffff;
+  --surface-soft: #f7f9fc;
+  --sidebar: #111827;
+  --text: #172033;
+  --muted: #697386;
+  --line: #dde3ed;
+  --accent: #0f766e;
+  --accent-2: #2563eb;
+  --warning: #f59e0b;
+  --danger: #e11d48;
+  --shadow: rgba(17, 24, 39, 0.12);
+}
+
+body.dark {
+  --bg: #10141e;
+  --surface: #171c28;
+  --surface-soft: #202736;
+  --sidebar: #080b12;
+  --text: #f5f7fb;
+  --muted: #aeb7c6;
+  --line: #303949;
+  --shadow: rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+}
+
+button {
+  font: inherit;
+}
+
+.dashboard {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.sidebar {
+  min-height: 100vh;
+  padding: 24px 18px;
+  color: #f8fafc;
+  background: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  margin: 0 0 26px;
+  font-size: 1.35rem;
+  letter-spacing: 0;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-item,
+.dark-mode {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-item:hover,
+.nav-item.active,
+.dark-mode:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item.active {
+  color: #ccfbf1;
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dbeafe;
+}
+
+.dark-mode span {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  color: transparent;
+  background: radial-gradient(circle at 65% 35%, transparent 0 32%, #f8fafc 34%);
+}
+
+.main-content {
+  min-width: 0;
+  padding: 30px;
+}
+
+.page-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.eyebrow,
+.period-label,
+.card span,
+.card small,
+.section-heading span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card,
+.chart-section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 16px 46px var(--shadow);
+}
+
+.card {
+  min-height: 136px;
+  padding: 18px;
+}
+
+.card strong {
+  display: block;
+  margin: 12px 0 8px;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1;
+}
+
+.card small {
+  color: var(--accent);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.chart-section {
+  min-width: 0;
+  padding: 20px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  font-size: 1.15rem;
+}
+
+.chart-frame {
+  position: relative;
+  min-height: 330px;
+}
+
+.pie-frame {
+  min-height: 330px;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+@media (max-width: 1040px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+    gap: 18px;
+  }
+
+  .main-content {
+    padding: 22px 14px;
+  }
+
+  .page-header {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+}
